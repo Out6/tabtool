@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TabTool Privacy Policy / 隐私政策</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-section: #f8f9fa;
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+      --tag-bg: #eff6ff;
+      --tag-text: #1d4ed8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .header-text h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .header-text .meta {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 3px;
+    }
+
+    /* Lang toggle */
+    .lang-toggle {
+      margin-left: auto;
+      display: flex;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-size: 13px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: all 0.15s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    strong {
+      color: var(--text);
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: var(--tag-bg);
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      color: var(--tag-text);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    th {
+      background: var(--bg-section);
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg-section); }
+
+    td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
+
+    /* Permission list */
+    .perm-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .perm-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .perm-name {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 12px;
+      background: var(--bg-section);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 2px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+      align-self: flex-start;
+      margin-top: 1px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    /* Language content */
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="4" rx="1"/>
+        <rect x="2" y="10" width="9" height="4" rx="1"/>
+        <rect x="2" y="17" width="14" height="4" rx="1"/>
+        <path d="M16 13l4 4-4 4"/>
+        <line x1="20" y1="17" x2="13" y2="17"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>TabTool</h1>
+      <div class="meta" data-label>隐私政策 · 最后更新：2026年7月12日</div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+      <button class="lang-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </div>
+
+  <!-- ===== 中文 ===== -->
+  <div data-lang="zh" class="visible">
+
+    <div class="section">
+      <div class="highlight">
+        TabTool 默认不收集、不上传任何用户数据，所有数据存储于您的本地设备。仅当您<strong>主动配置并启用「AI 智能分组」</strong>这一可选功能时，标签标题会发送到您自己指定的模型接口，用于生成分组建议——该功能默认关闭，不配置则完全不触发。
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>数据收集与使用</h2>
+      <p>扩展在本地处理以下信息，<strong>仅用于提供标签页管理功能</strong>：</p>
+      <table>
+        <tr><th>数据类型</th><th>使用目的</th></tr>
+        <tr><td>标签页 URL、标题、图标</td><td>分组、去重、搜索、会话管理</td></tr>
+        <tr><td>浏览历史（访问频率）</td><td>显示"最常访问"的网站列表</td></tr>
+        <tr><td>书签</td><td>在搜索结果中展示书签</td></tr>
+        <tr><td>会话记录（最近关闭的标签页）</td><td>支持恢复关闭的标签页</td></tr>
+        <tr><td>用户设置（分组规则、休眠时间等）</td><td>保存您的个性化配置</td></tr>
+        <tr><td>已访问网页的 meta 描述信息</td><td>本地缓存，作为分组功能的辅助参考，不上传</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>数据存储位置</h2>
+      <p><strong>chrome.storage.local</strong>：标签页活动记录、会话数据、AI 配置（API Key 等）、网页描述缓存，存储在您本机的 Chrome 浏览器中，不离开设备。</p>
+      <p><strong>chrome.storage.sync</strong>：用户设置，通过 Google 账号跨设备同步，由 Google 的标准加密机制保护。</p>
+    </div>
+
+    <div class="section">
+      <h2>权限说明</h2>
+      <p>扩展声明以下权限，均有明确用途，不超范围使用：</p>
+      <ul class="perm-list">
+        <li><span class="perm-name">tabs / windows / activeTab</span><span>读取和管理标签页及窗口状态</span></li>
+        <li><span class="perm-name">tabGroups</span><span>创建和管理标签页分组</span></li>
+        <li><span class="perm-name">history</span><span>读取访问频率，用于"最常访问"功能</span></li>
+        <li><span class="perm-name">bookmarks</span><span>在搜索结果中显示书签内容</span></li>
+        <li><span class="perm-name">sessions</span><span>读取并恢复最近关闭的标签页，支持快照保存</span></li>
+        <li><span class="perm-name">storage</span><span>在本地保存设置、快照、AI 配置等数据</span></li>
+        <li><span class="perm-name">alarms</span><span>定时执行标签页休眠检查和回收站清理，不涉及网络请求</span></li>
+        <li><span class="perm-name">contextMenus</span><span>在右键菜单中提供保存快照、复制网址、恢复标签等快捷操作</span></li>
+        <li><span class="perm-name">scripting</span><span>在当前页面注入操作提示（Toast）及剪贴板复制功能，不读取页面内容</span></li>
+        <li><span class="perm-name">favicon</span><span>通过 Chrome 本地接口获取标签页图标用于展示，不产生额外网络请求</span></li>
+        <li><span class="perm-name">host_permissions（所有网站）</span><span>用于在您访问的网页读取 meta 描述信息并仅缓存在本地</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>AI 智能分组（可选功能）</h2>
+      <p>该功能默认关闭，仅在您手动配置 API Base URL 与 API Key 并启用后生效。启用后，扩展会将当前窗口内标签页的<strong>标题</strong>发送到您自己配置的模型接口，用于生成分组建议。</p>
+      <p>不会发送浏览历史、网页正文内容、cookies 或其他隐私数据；请求直接发往您填写的接口地址，TabTool 开发者不经手、不留存这些请求内容。API Key 仅保存在本机 <strong>chrome.storage.local</strong> 中。</p>
+    </div>
+
+    <div class="section">
+      <h2>第三方共享</h2>
+      <p>TabTool 不与任何第三方共享数据，不包含任何追踪代码、广告 SDK 或数据分析工具。仅在您主动启用「AI 智能分组」时，数据才会发往您自行指定的第三方模型接口（见上一节），该行为完全由您控制。</p>
+    </div>
+
+    <div class="section">
+      <h2>数据删除</h2>
+      <p>卸载扩展时，<strong>chrome.storage.local</strong> 中的所有数据将随之删除。如需手动清除，可在扩展设置页面执行重置，或通过 Chrome「清除浏览数据」功能删除扩展存储。</p>
+    </div>
+
+    <div class="section">
+      <h2>政策变更</h2>
+      <p>如隐私政策发生实质性变更，将在扩展更新日志中说明。</p>
+    </div>
+
+    <div class="section">
+      <h2>联系方式</h2>
+      <p>如有隐私相关问题，欢迎通过 GitHub Issues 与我们联系。</p>
+    </div>
+
+  </div>
+
+  <!-- ===== English ===== -->
+  <div data-lang="en">
+
+    <div class="section">
+      <div class="highlight">
+        TabTool does not collect or upload any user data by default; all data is stored locally on your device. Only when you <strong>manually configure and enable the optional "AI Smart Grouping"</strong> feature will tab titles be sent to a model endpoint that you specify — this feature is off by default and never activates without your configuration.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Data Collection and Use</h2>
+      <p>The extension processes the following information locally, <strong>solely to provide tab management features</strong>:</p>
+      <table>
+        <tr><th>Data</th><th>Purpose</th></tr>
+        <tr><td>Tab URLs, titles, favicons</td><td>Grouping, deduplication, search, session management</td></tr>
+        <tr><td>Browsing history (visit frequency)</td><td>Display the "Most Visited" site list</td></tr>
+        <tr><td>Bookmarks</td><td>Show bookmarks in search results</td></tr>
+        <tr><td>Session data (recently closed tabs)</td><td>Restore recently closed tabs</td></tr>
+        <tr><td>User settings (grouping rules, sleep timers, etc.)</td><td>Save your personalized preferences</td></tr>
+        <tr><td>Meta description of visited pages</td><td>Cached locally as a grouping hint; never uploaded</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Data Storage</h2>
+      <p><strong>chrome.storage.local</strong>: Tab activity, session data, AI configuration (API key, etc.), and cached page descriptions — stored in your local Chrome browser, never leaving your device.</p>
+      <p><strong>chrome.storage.sync</strong>: User settings — synced across devices via your Google account, protected by Google's standard encryption.</p>
+    </div>
+
+    <div class="section">
+      <h2>Permissions Justification</h2>
+      <p>Each declared permission has a specific, limited purpose:</p>
+      <ul class="perm-list">
+        <li><span class="perm-name">tabs / windows / activeTab</span><span>Read and manage tab and window states</span></li>
+        <li><span class="perm-name">tabGroups</span><span>Create and manage tab groups</span></li>
+        <li><span class="perm-name">history</span><span>Read visit frequency for the "Most Visited" feature</span></li>
+        <li><span class="perm-name">bookmarks</span><span>Display bookmarks in search results</span></li>
+        <li><span class="perm-name">sessions</span><span>Read and restore recently closed tabs; support snapshot saving</span></li>
+        <li><span class="perm-name">storage</span><span>Save settings, snapshots, and AI configuration locally</span></li>
+        <li><span class="perm-name">alarms</span><span>Schedule tab hibernation checks and trash cleanup; no network requests involved</span></li>
+        <li><span class="perm-name">contextMenus</span><span>Provide quick actions (save snapshot, copy URL, reopen tab) in the right-click menu</span></li>
+        <li><span class="perm-name">scripting</span><span>Inject toast notifications and clipboard copy functionality into the active page; does not read page content</span></li>
+        <li><span class="perm-name">favicon</span><span>Fetch tab icons via Chrome's local API for display; no extra network requests</span></li>
+        <li><span class="perm-name">host_permissions (all sites)</span><span>Read meta description on pages you visit and cache it locally only</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>AI Smart Grouping (Optional Feature)</h2>
+      <p>This feature is off by default and only activates once you manually configure an API Base URL and API Key. When enabled, the extension sends the <strong>titles</strong> of tabs in the current window to the model endpoint you configured, to generate grouping suggestions.</p>
+      <p>It never sends browsing history, page content, cookies, or other private data. Requests go directly to the endpoint you provided — the TabTool developer never sees or retains this content. Your API Key is stored only in local <strong>chrome.storage.local</strong>.</p>
+    </div>
+
+    <div class="section">
+      <h2>Third-Party Sharing</h2>
+      <p>TabTool does not share data with any third parties and contains no tracking code, advertising SDKs, or analytics tools. Data is only sent to a third-party model endpoint if you explicitly enable "AI Smart Grouping" and configure that endpoint yourself (see above) — this is entirely under your control.</p>
+    </div>
+
+    <div class="section">
+      <h2>Data Deletion</h2>
+      <p>Uninstalling the extension removes all locally stored data. You may also reset all data from the extension's Settings page, or delete extension storage via Chrome's "Clear browsing data" feature.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to This Policy</h2>
+      <p>Material changes will be noted in the extension's release notes.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>For privacy-related questions, please open an issue on GitHub.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    TabTool &nbsp;·&nbsp; 本地标签页管理扩展 &nbsp;·&nbsp; No data collected
+  </footer>
+
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.toggle('visible', el.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang === 'zh' ? '中' : 'en'));
+    });
+    const meta = document.querySelector('[data-label]');
+    meta.textContent = lang === 'zh'
+      ? '隐私政策 · 最后更新：2026年4月25日'
+      : 'Privacy Policy · Last updated: April 25, 2026';
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  }
+</script>
+</body>
+</html>
