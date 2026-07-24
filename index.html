@@ -200,6 +200,57 @@ section{padding:88px 0}
 .sleep-row .zzz svg{width:16px;height:16px}
 .sleep-row span{font-size:13px;color:var(--ink-soft)}
 
+/* ============ 侧边栏常驻展示 ============ */
+.sp-showcase{
+  display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+}
+.sp-points{list-style:none}
+.sp-point{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border)}
+.sp-point:last-child{border-bottom:none}
+.sp-point .tick{
+  width:26px;height:26px;border-radius:50%;background:var(--primary-light);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+}
+.sp-point .tick svg{width:14px;height:14px}
+.sp-point h3{font-size:15.5px;font-weight:700;margin-bottom:4px}
+.sp-point p{font-size:14px;color:var(--ink-soft)}
+
+/* 侧边栏仿真视觉：宽浏览器窗口 + 右侧常驻面板 */
+.browser-frame{
+  background:var(--card);border-radius:14px;box-shadow:var(--shadow-lg);
+  border:1px solid var(--border);overflow:hidden;display:flex;height:380px;
+}
+.browser-page{flex:1;background:var(--muted);position:relative}
+.browser-page::before{
+  content:'';position:absolute;inset:16px;border-radius:10px;
+  background:linear-gradient(160deg, hsl(224,20%,92%) 0%, hsl(224,20%,96%) 100%);
+}
+.sp-panel{
+  width:180px;border-left:1px solid var(--border);background:var(--card);
+  display:flex;flex-direction:column;flex-shrink:0;
+}
+.sp-panel .sp-mock-search{
+  margin:10px;height:26px;border-radius:7px;background:var(--muted);border:1px solid var(--border);
+  display:flex;align-items:center;padding:0 8px;gap:6px;color:var(--ink-mute);font-size:10px;
+}
+.sp-panel .sp-mock-search svg{width:11px;height:11px}
+.sp-mock-group{margin:0 10px 10px}
+.sp-mock-ghead{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:var(--ink-soft);margin-bottom:6px}
+.sp-mock-ghead .gdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sp-mock-row{
+  height:24px;border-radius:6px;background:var(--card);border:1px solid var(--border);
+  display:flex;align-items:center;gap:6px;padding:0 7px;margin-bottom:5px;
+}
+.sp-mock-row .fav{width:11px;height:11px;border-radius:3px;background:var(--muted);flex-shrink:0}
+.sp-mock-row .ln{height:6px;border-radius:3px;background:var(--muted);flex:1}
+.sp-live-badge{
+  position:absolute;top:14px;left:14px;background:var(--card);border-radius:var(--radius-chip);
+  box-shadow:var(--shadow-md);padding:6px 11px;font-size:11px;font-weight:600;color:var(--accent-emerald);
+  display:flex;align-items:center;gap:6px;
+}
+.sp-live-badge .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent-emerald);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
 /* ============ 差异化：整段陈述 ============ */
 .statement{
   background:hsl(224,60%,14%);color:#fff;border-radius:24px;
@@ -242,6 +293,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;font-
   .hero-copy p{max-width:100%}
   .bento{grid-template-columns:1fr}
   .bcell.large,.bcell.tall,.bcell.wide{grid-column:span 1;grid-row:span 1}
+  .sp-showcase{grid-template-columns:1fr;gap:32px}
+  .browser-frame{order:-1;height:320px}
   .statement{padding:40px 28px}
   .statement p{font-size:19px}
   section{padding:64px 0}
@@ -465,6 +518,78 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;font-
   </div>
 </section>
 
+<!-- ============ 侧边栏常驻展示 ============ -->
+<section id="sidepanel">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>不止是弹窗，还能常驻在浏览器侧边</h2>
+      <p>打开 Chrome 侧边栏，标签分组和万能搜索就一直待在那里，浏览网页时也能随手管理，不用反复点开关闭。</p>
+    </div>
+
+    <div class="sp-showcase">
+      <ul class="sp-points">
+        <li class="sp-point">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h3>分组总览常驻，切换网页不打断</h3>
+            <p>当前窗口的所有分组和未分组标签一直显示在侧边，浏览、点击、切换标签的同时就能看到全局，不需要像 popup 一样点开又关掉。</p>
+          </div>
+        </li>
+        <li class="sp-point">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h3>搜索结果可以一直看，点了也不会消失</h3>
+            <p>popup 里点一个搜索结果窗口就关了，没法接着看别的；侧边栏是常驻面板，点开一个结果继续搜下一个，连续查找不被打断。</p>
+          </div>
+        </li>
+        <li class="sp-point">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h3>与浏览器分组状态实时双向同步</h3>
+            <p>在标签栏里折叠、展开、拖动分组，侧边栏跟着变；反过来在侧边栏操作，标签栏也同步更新，两边永远看到一致的状态。</p>
+          </div>
+        </li>
+        <li class="sp-point">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h3>常用操作一步到位</h3>
+            <p>整组新窗口打开、保存为快照、关闭整组，或是单个标签复制网址、移动分组、加入快照，都在侧边栏里直接完成，不用切回 popup。</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="browser-visual">
+        <div class="browser-frame">
+          <div class="browser-page">
+            <div class="sp-live-badge"><span class="pulse"></span>与标签栏实时同步</div>
+          </div>
+          <div class="sp-panel">
+            <div class="sp-mock-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              万能搜
+            </div>
+            <div class="sp-mock-group">
+              <div class="sp-mock-ghead"><span class="gdot" style="background:hsl(210,80%,55%)"></span>github.com · 3</div>
+              <div class="sp-mock-row"><span class="fav"></span><span class="ln" style="width:60%"></span></div>
+              <div class="sp-mock-row"><span class="fav"></span><span class="ln" style="width:42%"></span></div>
+              <div class="sp-mock-row"><span class="fav"></span><span class="ln" style="width:52%"></span></div>
+            </div>
+            <div class="sp-mock-group">
+              <div class="sp-mock-ghead"><span class="gdot" style="background:hsl(280,60%,58%)"></span>figma.com · 2</div>
+              <div class="sp-mock-row"><span class="fav"></span><span class="ln" style="width:50%"></span></div>
+              <div class="sp-mock-row"><span class="fav"></span><span class="ln" style="width:38%"></span></div>
+            </div>
+            <div class="sp-mock-group">
+              <div class="sp-mock-ghead"><span class="gdot" style="background:hsl(38,92%,50%)"></span>未分组 · 1</div>
+              <div class="sp-mock-row"><span class="fav"></span><span class="ln" style="width:44%"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 差异化陈述 ============ -->
 <section>
   <div class="wrap">
@@ -488,7 +613,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;font-
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
       安装到 Chrome
     </a>
-    <p class="trust-note"></p>
+    <p class="trust-note">为重度浏览器用户打造</p>
   </div>
 </section>
 
@@ -497,14 +622,14 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;font-
     <span>© 2026 TabTool</span>
     <span style="display:flex;gap:20px">
       <a href="privacy-policy.html" style="color:var(--ink-mute)">隐私政策</a>
-      为重度浏览器用户打造
+      
     </span>
   </div>
 </footer>
 
 <script>
 // 滚动进入视口时才触发 fade-up，避免首屏以外元素一次性全部播放
-const revealTargets = document.querySelectorAll('#features, #pain, .statement, .final-cta');
+const revealTargets = document.querySelectorAll('#features, #pain, #sidepanel, .statement, .final-cta');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
